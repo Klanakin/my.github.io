@@ -11,7 +11,7 @@ html {
 }
 body {
     background-color: whitesmoke;
-    background: url(img/PowerfulReasons_hero.jpg);
+    background: url(../img/PowerfulReasons_hero.jpg);
     background-size: cover;
     font-family: sans-serif;
     font-size: 1.6rem;
@@ -38,7 +38,7 @@ input:focus, select:focus, textarea:focus {
 input[type="date"]::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     display: block;
-    background: url(img/icon_calendar.svg) no-repeat;
+    background: url(../img/icon_calendar.svg) no-repeat;
     height: 4rem;
     margin: 1rem 0 0 0;
 }
