@@ -122,7 +122,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-top: 1.5rem;
 }
 
-/* Utilities */
+/* Utility classes*/
 .margin-right-s {
     margin-right: 1rem;
 }
