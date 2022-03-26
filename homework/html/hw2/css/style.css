@@ -30,22 +30,33 @@ input, select, textarea {
     transition: 0.2s;
     outline: none;
 }
+select {
+    cursor: pointer;
+}
 input:focus, select:focus, textarea:focus {
-    background-color: #ddd;
+    background-color: #e6e6e6;
     /* background: rgba(0,0,0,.08); */
     /* border: solid .2rem #666; */
 }
+input[type="date"] {
+    cursor: text;
+}
 input[type="date"]::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    cursor: pointer;
     display: block;
     background: url(../img/icon_calendar.svg) no-repeat;
     height: 4rem;
     margin: 1rem 0 0 0;
 }
+input[type="number"]::-webkit-inner-spin-button {
+    opacity: 0;
+    cursor: pointer;
+}
 .select-wrapper {
     position: relative;
-  }
-  
+}
 .select-wrapper::after {
     content: "▼";
     color: #888;
@@ -53,6 +64,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 1.6rem;
     right: .5rem;
     position: absolute;
+    pointer-events: none;
 }
 .container {
     display: flex;
@@ -86,6 +98,65 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .input_elem {
     display: flex;
     flex-direction: column;
+}
+.input_elem-passenger {
+    position: relative;
+}
+.input_elem-passenger::after {
+    content: "◄ ►";
+    color: #888;
+    font-size: 1rem;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: absolute;
+    pointer-events: none;
+    width: 2.5rem;
+    height: 5rem;
+    bottom: 0;
+    right: 1.6rem;
+}
+.input_elem-passenger::before {
+    content: "";
+    font-size: 1rem;
+    position: absolute;
+    pointer-events: none;
+    background-color: #e6e6e6;
+    border-radius: 0 .4rem .4rem 0;
+    width: 2.5rem;
+    height: 5rem;
+    bottom: 0;
+    right: 0;
+}
+.input_elem-passenger--adult {
+    position: relative;
+}
+.input_elem-passenger--adult::after {
+    content: "◄ ►";
+    color: #888;
+    font-size: 1rem;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: absolute;
+    pointer-events: none;
+    width: 2.5rem;
+    height: 5rem;
+    bottom: 0;
+    right: 2.6rem;
+}
+.input_elem-passenger--adult::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    background-color: #ddd;
+    border-radius: 0 .4rem .4rem 0;
+    width: 2.5rem;
+    height: 5rem;
+    bottom: 0;
+    right: 1rem;
 }
 .box {
     border: solid #eee .2rem;
@@ -121,8 +192,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-left: 3.5rem;
     padding-top: 1.5rem;
 }
-
-/* Utility classes*/
+/*****************
+  Utility classes
+ *****************/
 .margin-right-s {
     margin-right: 1rem;
 }
